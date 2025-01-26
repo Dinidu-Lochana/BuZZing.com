@@ -1,0 +1,142 @@
+.homepage {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .hero-section {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    padding: 80px 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: slideInFromLeft 1s ease-out;
+  }
+
+  .imgDiv{
+    width: 100%;
+    vertical-align: middle;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    margin-bottom: 20px;     
+  }
+
+.logo img {
+    width: 250px;  
+    height: auto; 
+    
+}
+  
+  .hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: slideInFromRight 1s ease-out;
+  }
+  
+  .hero-section .btn-book {
+    background-color: #ff5a5f;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .hero-section .btn-book:hover {
+    background-color: #e04a50;
+    transform: scale(1.1);
+  }
+  
+  .features {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .feature-card {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1%;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    animation: zoomIn 1s ease-in-out;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  

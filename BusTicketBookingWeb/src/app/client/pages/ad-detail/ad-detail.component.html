@@ -1,0 +1,83 @@
+<div class="bg" style="background-color: #f8f8f8;" *ngIf="ad">
+    <div class="ad-details-container">
+        <div class="top-section">
+            <div class="ad-detail" style="border-radius: 10px;">
+                <div nz-col nzSpan="8">
+                    <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" [src]="avatarUrl" alt="profile"/>
+                </div>
+                <div nz-col nzSpan="16">
+                    <h2 style="cursor: pointer; color: #108ee9;">
+                        {{ad.fromTown}} to {{ad.toTown}}
+                    </h2>
+                    <h3>
+                        {{ad.departureTime}} | {{ad.arriveTime}}
+                    </h3>
+                    <h4>
+                        Contact Number : <b>{{ ad.contactNo }} | {{ad.name}}</b>
+                    </h4>
+                    <h4>
+                        Bus Number Plate : <b>{{ ad.busNoPlate }}</b>
+                    </h4>
+                    <h4>
+                        Price : <b>{{ad.price}}</b>
+                    </h4>
+                    <h5>
+                        Description : <b>{{ad.description}}</b>
+                    </h5>
+                </div>
+            </div>
+            <div class="book-service" style="border-radius: 10px; margin-left: 20px;">
+                <div>
+                    <div nz-row>
+                        <h2>Reserve Your Ticket</h2>
+                    </div>
+                    <form nz-form [formGroup]="validateForm">
+                        <div nz-row>
+                            <div nz-col nzSpan="24">
+                                <nz-form-item>
+                                    <nz-form-label [nzSpan]="24" nzFor="bookDate">Date of Booking</nz-form-label>
+                                    <nz-form-control [nzSpan]="24">
+                                        <nz-date-picker formControlName="bookDate" name="bookDate" id="bookDate">
+
+                                        </nz-date-picker>
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-label [nzSpan]="24" nzFor="noOfSeats">Number of Seats</nz-form-label>
+                                    <nz-form-control [nzSpan]="24">
+                                        <nz-input-number formControlName="noOfSeats" name="noOfSeats" id="noOfSeats" [nzMin]="1"  [nzStep]="1"></nz-input-number>
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-label [nzSpan]="24" nzFor="pickUpLocation">Pick Up Location</nz-form-label>
+                                    <nz-form-control [nzSpan]="24">
+                                        <input formControlName="pickUpLocation" name="pickUpLocation" id="pickUpLocation">
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <button nz-button [nzType]="'primary'" [disabled]="validateForm.invalid" (click)="bookService()">
+                            Book
+                        </button> 
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="review-section" style="padding-left: 55px; border-radius: 10px;">
+            <div class="review-card" style=" border-radius: 10px;" *ngFor="let review of reviews" >
+                <nz-card [nzBordered]="false" nzTitle="{{review.clientName}}">
+                    <p>
+                        Review : <strong>{{review.review}}</strong>
+                    </p>
+                    <p>
+                        <strong><nz-rate disabled [ngModel]="review.rating"></nz-rate></strong>
+                    </p>
+                    <p>
+                        Review Date :
+                        <strong>{{review.reviewDate | date : "dd/MM/yyyy"}}</strong>
+                    </p>
+                </nz-card>
+            </div>
+        </div>
+    </div>
+</div>
